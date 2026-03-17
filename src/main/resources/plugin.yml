@@ -1,0 +1,25 @@
+name: MourningGraves
+version: '1.0'
+main: org.Mellurboo.mourningGraves.MourningGraves
+api-version: '1.21'
+
+permissions:
+  graves.use:
+    description: Allows players to use their own graves
+    default: true
+  graves.admin:
+    description: Allows admins to view and manage all graves
+    default: op
+  graves.unlimitedTime:
+    description: Grave never despawns for this player (ignores expiry timer)
+    default: false
+  graves.others:
+    description: Allows collecting other players graves (if allow-others-collect is true)
+    default: false
+
+commands:
+  grave:
+    description: Open your graves list or manage graves
+    usage: /grave [list|tp|delete|admin]
+    permission: graves.use
+    aliases: [graves, g]

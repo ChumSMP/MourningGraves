@@ -1,0 +1,77 @@
+# How long (in seconds) graves persist before despawning.
+# Set to -1 to disable expiry entirely.
+grave-expiry-seconds: 300
+
+# is XP is also saved in the grave and returned on collection?
+save-experience: true
+
+# do players receive a compass on death pointing to their grave?
+give-compass: true
+
+# Compass item name
+compass-name: "&6☠ Grave Compass"
+
+# is the compass is removed from inventory when the grave is collected?
+remove-compass-on-collect: true
+
+# XP levels charged to a player when they collect a grave?
+# Set to 0 to make collection free. Players with graves.unlimitedTime are exempt.
+collect-xp-cost-levels: 0
+
+# can players collect graves by clicking them in the GUI?
+# They must right-click the grave block in-world. Admins are unaffected.
+allow-gui-collect: true
+
+# can players with the graves.others permission can collect other players' graves?
+# Admins (graves.admin) can always collect any grave regardless of this setting.
+allow-others-collect: false
+
+# The block placed at the grave location.
+# Examples: SOUL_SAND, GRAVEL, OBSIDIAN, CHISELED_STONE_BRICKS
+# The block can't be mined
+grave-block: SOUL_SAND
+
+# is a TextDisplay billboard shown to the player of the dead players name and timer above the grave?
+show-name-tag: true
+
+# Name tag format. Placeholders: {player}, {time}
+name-tag-format: "&f{player}'s Grave\n&7Expires in &e{time}"
+
+# Particles displayed around active graves (spawns every ~0.6s)
+# Set to NONE to disable.
+grave-particle: SOUL_FIRE_FLAME
+
+# Sound played when a grave is created.
+grave-create-sound: ENTITY_WITHER_SPAWN
+
+# Sound played when a player collects their grave.
+grave-collect-sound: ENTITY_PLAYER_LEVELUP
+
+# GUI settings
+gui:
+  title: "&8☠ &fYour Graves"
+  admin-title: "&8☠ &c{player}'s Graves"
+  rows: 6
+  grave-item: SOUL_LANTERN
+  empty-item: GRAY_STAINED_GLASS_PANE
+  empty-name: "&7No active graves"
+  filler-item: BLACK_STAINED_GLASS_PANE
+
+# Messages
+messages:
+  prefix: "&8[&6Graves&8] &r"
+  grave-created: "&aYour items have been saved in a grave at &e{x}, {y}, {z}&a in &e{world}&a."
+  grave-collected: "&aYou collected your grave! &7({items} items, {xp} XP)"
+  grave-expired: "&cOne of your graves has expired and its items were lost."
+  no-graves: "&7You have no active graves."
+  compass-given: "&6A compass pointing to your grave has been added to your inventory."
+  no-permission: "&cYou don't have permission to do that."
+  grave-not-found: "&cGrave not found."
+  admin-cleared: "&aCleared all graves for &e{player}&a."
+  not-enough-levels: "&cYou need &e{levels} XP level(s) &cto collect this grave."
+  gui-collect-disabled: "&cYou must collect this grave by right-clicking it in the world."
+
+# Storage, probably leave this alone.
+storage:
+  type: json
+  folder: graves
